@@ -64,7 +64,11 @@ class MainActivity : BaseActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-               mainActivityViewModel.getGifData(et_search.text.toString())
+                if (isNetworkConnected()) {
+                    mainActivityViewModel.getGifData(et_search.text.toString())
+                } else {
+                    showToast("No Internet Connection!!")
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {
