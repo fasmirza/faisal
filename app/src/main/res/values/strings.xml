@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CCPDemo</string>
-    <string name="search">Search your GIF Here</string>
+    <string name="search">Search GIF for Fun !!!</string>
     <string name="nothig_to_show">Sorry !!! Nothing found</string>
     <string name="demo_gif_name">Hello GIF</string>
 </resources>
