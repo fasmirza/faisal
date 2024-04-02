@@ -71,5 +71,8 @@ dependencies {
     annotationProcessor("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("com.github.bumptech.glide:okhttp3-integration:4.12.0")
+
 }
 

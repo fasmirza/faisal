@@ -1,6 +1,7 @@
 package com.example.demoaplication.network
 
 
+import android.util.Log
 import androidx.multidex.BuildConfig
 import com.example.demoaplication.util.UrlConstant
 import okhttp3.OkHttpClient
@@ -15,9 +16,12 @@ object RetrofitBuilder {
     private fun getRetrofit(): Retrofit {
 
 
-        val interceptor = HttpLoggingInterceptor()
+        val interceptor = HttpLoggingInterceptor { message ->
+            Log.d("API", message)
+        }
+
         interceptor.level = when (BuildConfig.BUILD_TYPE) {
-             "release"-> HttpLoggingInterceptor.Level.NONE
+            "release" -> HttpLoggingInterceptor.Level.NONE
             else -> {
                 HttpLoggingInterceptor.Level.BODY
                 HttpLoggingInterceptor.Level.HEADERS
